@@ -48,6 +48,7 @@ type FormData = {
   website?: string;
   nip05?: string;
   lightningAddress?: string;
+  aid?: string;
 };
 
 const MetadataForm = ({
@@ -228,6 +229,16 @@ const MetadataForm = ({
           {...register("website", { maxLength: 300 })}
         />
       </FormControl>
+      <FormControl >
+        <FormLabel>Aptos ID</FormLabel>
+        <Input
+          type="string"
+          autoComplete="off"
+          placeholder="https://example.com"
+          isDisabled={isSubmitting}
+          {...register("aid", { maxLength: 300 })}
+        />
+      </FormControl>
       <FormControl isInvalid={!!errors.about}>
         <FormLabel>About</FormLabel>
         <Textarea
@@ -284,6 +295,7 @@ export const ProfileEditView = () => {
       about: metadata?.about,
       website: metadata?.website,
       nip05: metadata?.nip05,
+      aid: metadata?.aid,
       lightningAddress: metadata?.lud16 || metadata?.lud06,
     }),
     [metadata],

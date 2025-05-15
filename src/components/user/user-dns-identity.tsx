@@ -18,6 +18,16 @@ export default function UserDnsIdentity({
       </Tooltip>
     );
   }
+  if(metadata != undefined) {
+    if(metadata.aid != undefined) {
+      return (
+        <Text as="span" whiteSpace="nowrap" {...props}>
+          Aptos ID {metadata.aid}.apt
+          <UserDnsIdentityIcon pubkey={pubkey} />
+        </Text>
+      );
+    }
+  }
   return (
     <Text as="span" whiteSpace="nowrap" {...props}>
       {metadata.nip05.startsWith("_@") ? metadata.nip05.substr(2) : metadata.nip05}{" "}

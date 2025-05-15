@@ -46,6 +46,8 @@ git clone git@github.com:hzrd149/nostrudel.git
 cd nostrudel
 pnpm install
 pnpm run dev
+
+npx vite serve --host 0.0.0.0
 ```
 
 ## Contributing

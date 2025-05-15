@@ -1,0 +1,13 @@
+nostr.local {
+    reverse_proxy host.docker.internal:5173
+    # tls you@example.com
+
+    @cors_options method OPTIONS
+    header @cors_options Access-Control-Allow-Origin *  # Allow all origins
+    header @cors_options Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    header @cors_options Access-Control-Allow-Headers "*"
+    header @cors_options Access-Control-Max-Age 86400
+
+    # Allow CORS for all other responses as well
+    header Access-Control-Allow-Origin *
+}

@@ -186,6 +186,14 @@ export default function UserAboutTab() {
             </Link>
           </Flex>
         )}
+        {metadata?.aid && (
+          <Flex gap="2">
+            <ExternalLinkIcon boxSize="1.2em" />
+            <Link href={metadata.aid} target="_blank" color="blue.500" isExternal>
+              {metadata.aid}
+            </Link>
+          </Flex>
+        )}
         <Flex gap="2">
           <KeyIcon boxSize="1.2em" />
           <Text>{truncatedId(npub, 10)}</Text>

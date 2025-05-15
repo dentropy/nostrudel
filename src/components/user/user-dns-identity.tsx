@@ -20,6 +20,7 @@ export default function UserDnsIdentity({
   }
   if(metadata != undefined) {
     if(metadata.aid != undefined) {
+      console.log("WE_DEBUG_HERE")
       return (
         <Text as="span" whiteSpace="nowrap" {...props}>
           Aptos ID {metadata.aid}.apt

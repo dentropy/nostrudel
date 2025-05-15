@@ -189,8 +189,8 @@ export default function UserAboutTab() {
         {metadata?.aid && (
           <Flex gap="2">
             <ExternalLinkIcon boxSize="1.2em" />
-            <Link href={metadata.aid} target="_blank" color="blue.500" isExternal>
-              {metadata.aid}
+            <Link href={"https://aptid.xyz/" + metadata.aid} target="_blank" color="blue.500" isExternal>
+              Aptos ID: {metadata.aid}
             </Link>
           </Flex>
         )}

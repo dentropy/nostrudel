@@ -4,7 +4,7 @@ import { IdentityStatus } from "applesauce-loaders/helpers/dns-identity";
 
 import useDnsIdentity from "../../hooks/use-dns-identity";
 import useUserProfile from "../../hooks/use-user-profile";
-import { ErrorIcon, VerificationFailed, VerificationMissing, VerifiedIcon } from "../icons";
+import { ErrorIcon, VerificationFailed, VerificationMissing, VerifiedIcon, AidIcon, SpyIcon } from "../icons";
 
 import { useAsync } from "react-use";
 import { getLinks, fetchAID } from "./aptos-client.ts"
@@ -60,11 +60,13 @@ const UserDnsIdentityIcon = forwardRef<SVGSVGElement, { pubkey: string } & IconP
   console.log(data)
   console.log("WE_GOT_HERE")
   if(aIDStatus == "Verified") {
-    console.log("SHOULD BE GREEN")
-    return <VerificationMissing color="green.500" {...props} ref={ref} />;
+    return <a>🚰</a>
+    // console.log("SHOULD BE GREEN")
+    // return <AidIcon color="green.500" {...props} ref={ref} />;
   }
   if(aIDStatus == "Not Verified") {
-    return <VerificationMissing color="purple.500" {...props} ref={ref} />;
+    return <p>🚯</p>
+    // return <AidIcon color="purple.500" {...props} ref={ref} />;
   }
   if (metadata == undefined) return null;
   if (!metadata?.nip05) return null;
